@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
+require 'YAML'
 require 'sinatra'
 require 'twitter_oauth'
 
@@ -10,12 +11,12 @@ end
 
 before do
   next if request.path_info =~ /ping$/
-  @user = session[:user]
+  @user = true #session[:user]
   @client = TwitterOAuth::Client.new(
     :consumer_key => ENV['CONSUMER_KEY'] || @@config['consumer_key'],
     :consumer_secret => ENV['CONSUMER_SECRET'] || @@config['consumer_secret'],
-    :token => session[:access_token],
-    :secret => session[:secret_token]
+    :token =>  ENV['ACCESS_TOKEN'] || @@config["access_token"],
+    :secret => ENV['SECRET_TOKEN'] || @@config["secret_token"]
   )
   @rate_limit_status = @client.rate_limit_status
 end

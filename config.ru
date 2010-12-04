@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'sinitter'
+require 'potholes'
 run Sinatra::Application
 
