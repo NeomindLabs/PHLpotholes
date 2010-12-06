@@ -1,3 +1,7 @@
+h1. Note:
+
+This app started its life as a copy of the Sinitter repo, and nobody has updated the README yet.
+
 h1. Sinitter
 
 Sinitter is a "sinatra":http://github.com/bmizerany/sinatra/tree/master application to demonstrate the integration of Twitter OAuth via the "twitter_oauth":http://github.com/moomerman/twitter_oauth/tree/master gem.
